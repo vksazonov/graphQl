@@ -1,0 +1,47 @@
+Here is a small chat app written on GraphQl, apollo-server-express, node.js, written in Typescript
+There are three types:
+  Forum: each one has a 
+    -personal id, 
+    -name,
+    -private (you can decide to make it private or not)
+    -admin (a person who has created forum), 
+    -an array of users who have joined the forum,
+    -an array of messages which are written in forum,
+    -an array of requests (we need them if the forum is private)
+
+  User: each uxser has a
+    -personal id,
+    -username,
+    -picture,
+    -age,
+
+  Message: each message has a
+    -personl id,
+    -text of the message,
+    -sentAt(exact date of creating a message)
+    -user(a User who wrote a message)
+
+There are six Querries covering all the requests in the task:
+  -getAllUsers gives you back all registered users
+  -getUserById gives you theuser you try to find
+  -getJoinedForums gives you all forums that you have joined
+  -getAllNonPrivateForums gives you all forums exept private forums
+  -watchMessages gives you all messages if you have joined the forum,
+  -getForumMembers gives you all members who joined the forum
+
+There are six Mutations covering all the requests in the task:
+  -createForum creates a new forum, making the person who created it an admin,
+  -joinForumById joines the forum, but if it is private, you are sending a request,
+  -acceptRequest transfers you from request array to members array
+  -refuseRequest takes you out of the request array
+  -createMessage creates a new message in forum
+  -createUser creates a new user
+
+To install all the packages you need to write:
+  - npm i
+
+To run the server you need to write:
+  - npm start
+
+Enjoy =)
+
